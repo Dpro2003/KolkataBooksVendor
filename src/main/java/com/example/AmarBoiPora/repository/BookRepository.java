@@ -25,7 +25,7 @@ public interface BookRepository extends MongoRepository<Book, String> {
     boolean existsByIsbnAndVendorIdAndDeletedFalse(String isbn, String vendorId);
 
     // Count vendor active books
-    long countByVendorIdAndDeletedFalse(String vendorId);
+
 
 
     /* ==========================================================
@@ -76,6 +76,11 @@ public interface BookRepository extends MongoRepository<Book, String> {
     long countByBestSellerTrue();
 
     long countByVendorId(String vendorId);
+    long countByVendorIdAndBestSellerTrueAndDeletedFalse(
+            String vendorId
+    );
+    long countByVendorIdAndDeletedFalse(String vendorId);
+
 
 
     /* ==========================================================

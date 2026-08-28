@@ -2,6 +2,8 @@ package com.example.AmarBoiPora.repository;
 
 
 import com.example.AmarBoiPora.entity.Users;
+import com.example.AmarBoiPora.enums.Role;
+import com.example.AmarBoiPora.enums.VendorStatus;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -18,5 +20,7 @@ public interface UserRepository extends MongoRepository<Users,String> {
 
     boolean existsByAadhaarNumber(String aadhaarNumber);
 
-
+    long countByRoleAndStatus(Role role, VendorStatus status);
+    
+    java.util.List<Users> findAllByRoleAndStatus(Role role, VendorStatus status);
 }

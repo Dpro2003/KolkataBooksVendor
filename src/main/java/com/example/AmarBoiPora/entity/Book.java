@@ -54,5 +54,6 @@ public class Book {
 
     private LocalDateTime updatedAt;
 
+
     private boolean deleted; // for admin soft delete
 }
